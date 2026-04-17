@@ -1,0 +1,386 @@
+@import './styles/variables.css';
+
+/* ============================================================
+   ОСНОВНАЯ КОМПОНОВКА ПРИЛОЖЕНИЯ
+   ============================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ============================================================
+   ОБЩИЕ КНОПКИ
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   ФОРМЫ / ИНПУТЫ / СООБЩЕНИЯ
+   ============================================================ */
+
+.input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: white;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: none;
+  border-radius: 16px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.error-message,
+.success-message {
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: var(--error-color);
+  border: 1px solid #fecaca;
+}
+
+.success-message {
+  background: #f0fdf4;
+  color: var(--success-color);
+  border: 1px solid #bbf7d0;
+}
+
+/* ============================================================
+   ЗАГРУЗКА
+   ============================================================ */
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.loader {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+/* ============================================================
+   SCORE BADGE
+   ============================================================ */
+
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+.score-icon {
+  font-size: 1.05rem;
+}
+
+.score-high {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+}
+
+.score-medium {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: white;
+}
+
+.score-low {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+}
+
+/* ============================================================
+   REVIEW CONTROLS
+   ============================================================ */
+
+.review-controls {
+  display: grid;
+  gap: 1rem;
+}
+
+.control-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.control-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.control-card__title {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.control-card__description {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.option-grid {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.option-btn--active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.option-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   РЕЗУЛЬТАТ
+   ============================================================ */
+
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  gap: 1rem;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.result-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.result-subtitle {
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.result-section {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+}
+
+.result-section__title {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.status-section {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+}
+
+.status-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: var(--text-primary);
+}
+
+.status-icon {
+  min-width: 24px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.issue-list,
+.bullet-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.issue-item {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.issue-item__line {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.issue-item__text {
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+.feedback-text {
+  white-space: pre-wrap;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.code-block {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 18px;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-family: 'Fira Code', 'Monaco', monospace;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   NOT FOUND
+   ============================================================ */
+
+.not-found-container {
+  max-width: 520px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.not-found-container h1 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-container p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.back-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.3rem;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}

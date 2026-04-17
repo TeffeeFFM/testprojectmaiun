@@ -1,0 +1,117 @@
+@import '../../styles/variables.css';
+
+.problem-detail-page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.problem-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.problem-panel,
+.solution-panel {
+  min-width: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.problem-panel h1 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.difficulty-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: var(--text-secondary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.description p {
+  white-space: pre-wrap;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.format-section,
+.examples-section {
+  margin-top: 1rem;
+}
+
+.format-section h3,
+.examples-section h3,
+.section-header h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.format-section p {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 0.9rem;
+  white-space: pre-wrap;
+  color: var(--text-primary);
+}
+
+.example-card {
+  margin-top: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+.example-card strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-secondary);
+}
+
+.example-card pre {
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: 14px;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.solution-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-hint {
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 1024px) {
+  .problem-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

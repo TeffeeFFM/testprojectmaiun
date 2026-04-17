@@ -1,0 +1,12 @@
+git commit -m "Initial commit: code review with AI (Yandex/GigaChat)"
+
+npm i
+pip install -r requirements.txt
+
+python manage.py runserver (cd backend)
+
+python -m venv venv В корень
+
+# тестовый аккаунт admin
+log - ex@gmail.com
+pass - 12345678
